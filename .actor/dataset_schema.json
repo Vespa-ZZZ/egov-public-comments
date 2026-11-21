@@ -1,0 +1,62 @@
+{
+    "actorSpecification": 1,
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "kind",
+                    "title",
+                    "ministry",
+                    "category",
+                    "proposalDate",
+                    "deadline",
+                    "resultDate",
+                    "commentCount",
+                    "procedureType",
+                    "url"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "kind": {
+                        "label": "Type"
+                    },
+                    "title": {
+                        "label": "Title"
+                    },
+                    "ministry": {
+                        "label": "Ministry"
+                    },
+                    "category": {
+                        "label": "Category"
+                    },
+                    "proposalDate": {
+                        "label": "Proposed",
+                        "format": "date"
+                    },
+                    "deadline": {
+                        "label": "Deadline",
+                        "format": "date"
+                    },
+                    "resultDate": {
+                        "label": "Result date",
+                        "format": "date"
+                    },
+                    "commentCount": {
+                        "label": "Comments",
+                        "format": "number"
+                    },
+                    "procedureType": {
+                        "label": "Procedure"
+                    },
+                    "url": {
+                        "label": "Page",
+                        "format": "link"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "egov-public-comments",
+    "title": "Japan Public Comment Monitor (e-Gov パブコメ)",
+    "description": "Track Japanese government public comment procedures (パブリックコメント): new draft regulations open for comment and published results, with deadlines, ministry, legal basis and document links. Monitoring mode returns only new items.",
+    "version": "1.0",
+    "buildTag": "latest",
+    "input": "./input_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}

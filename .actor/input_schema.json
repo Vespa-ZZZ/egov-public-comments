@@ -1,0 +1,149 @@
+{
+    "title": "e-Gov public comment monitor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "feeds": {
+            "title": "What to fetch",
+            "type": "array",
+            "description": "`open` = new public comment calls (意見募集案件, drafts open for comment). `results` = published results (結果公示案件: submitted comment counts, final rules, government responses).",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "open",
+                    "results"
+                ],
+                "enumTitles": [
+                    "Open calls for comment (意見募集)",
+                    "Published results (結果公示)"
+                ]
+            },
+            "prefill": [
+                "open"
+            ],
+            "default": [
+                "open"
+            ]
+        },
+        "categories": {
+            "title": "Categories",
+            "type": "array",
+            "description": "Limit to e-Gov policy categories. When set, the per-category feeds are read (they reach further back than the all-items feed). Leave empty for all categories.",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "IT社会化推進",
+                    "経済財政政策",
+                    "共生社会政策",
+                    "国民生活の安全・安心の確保",
+                    "地方分権改革等",
+                    "選挙、政党",
+                    "独立行政法人等",
+                    "国家公務員",
+                    "行政手続",
+                    "統計",
+                    "地方自治",
+                    "地方財政、地方税",
+                    "司法",
+                    "民事",
+                    "刑事",
+                    "警察",
+                    "消防",
+                    "国土開発",
+                    "土地",
+                    "都市計画",
+                    "道路",
+                    "河川",
+                    "建築、住宅",
+                    "財務",
+                    "国有財産",
+                    "国税",
+                    "国債",
+                    "教育",
+                    "文化",
+                    "産業一般",
+                    "農業",
+                    "林業",
+                    "水産業",
+                    "鉱業",
+                    "工業",
+                    "商業",
+                    "金融、保険",
+                    "外国為替、貿易",
+                    "陸運",
+                    "海運",
+                    "航空",
+                    "貨物運送",
+                    "観光",
+                    "郵務",
+                    "電気通信",
+                    "労働",
+                    "環境保全",
+                    "厚生",
+                    "社会福祉",
+                    "社会保険",
+                    "防衛",
+                    "外事",
+                    "その他"
+                ]
+            }
+        },
+        "keywords": {
+            "title": "Title keywords (any)",
+            "type": "array",
+            "description": "Keep only items whose title contains at least one of these strings, e.g. `AI`, `個人情報`, `電波`, `金融商品取引法`.",
+            "editor": "stringList"
+        },
+        "ministries": {
+            "title": "Ministries / agencies (any)",
+            "type": "array",
+            "description": "Keep only items from these organisations (partial match), e.g. `総務省`, `金融庁`, `経済産業省`, `個人情報保護委員会`.",
+            "editor": "stringList"
+        },
+        "fetchDetails": {
+            "title": "Fetch detail pages",
+            "type": "boolean",
+            "description": "Open each item page to add the case number, legal basis, procedure type, reception start, revision status and links to all documents (PDF drafts, guidelines, results). One extra request per item.",
+            "default": true
+        },
+        "onlyNew": {
+            "title": "Monitoring mode: only new items",
+            "type": "boolean",
+            "description": "Remember items already returned (named key-value store) and output only new ones. Schedule daily or a few times per day. Items whose detail page failed are retried next run.",
+            "default": false
+        },
+        "stateKey": {
+            "title": "Monitoring state key",
+            "type": "string",
+            "editor": "textfield",
+            "pattern": "^[a-zA-Z0-9_-]{1,50}$",
+            "description": "Separate name for the \"already seen\" list, so schedules with different filters do not interfere. Letters, digits, - and _ only. Do not run two schedules with the same key at the same time.",
+            "default": "default"
+        },
+        "maxItems": {
+            "title": "Max results",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5000,
+            "default": 200,
+            "description": "Maximum number of items to output."
+        },
+        "maxDetailRequests": {
+            "title": "Max detail page requests per run",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5000,
+            "default": 300,
+            "description": "Upper limit on detail pages fetched in one run (each page may be retried up to 3 times on temporary errors). In monitoring mode, items left over are processed by the next run."
+        },
+        "requestIntervalMs": {
+            "title": "Delay between requests (ms)",
+            "type": "integer",
+            "minimum": 1000,
+            "default": 2000,
+            "description": "Pause between requests to e-Gov. Minimum 1000 ms."
+        }
+    }
+}

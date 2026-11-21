@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <channel rdf:about="https://public-comment.e-gov.go.jp/rss/pcm_result.xml">
+    <title>パブリックコメント・結果公示案件一覧</title>
+    <description>パブリックコメントでの結果公示案件一覧です。</description>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTLIST&amp;Mode=1</link>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210763&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260054&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260055&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260720&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320023&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320024&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320025&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320026&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=120260026&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260410&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=620340014&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=185001516&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550003576&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004011&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004012&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320027&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210774&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260192&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260723&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210781&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260176&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004403&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210772&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320030&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210773&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260257&amp;Mode=1"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210796&amp;Mode=1"/>
+      </rdf:Seq>
+    </items>
+    <dc:date>2026-11-21T09:01:18+0900</dc:date>
+  </channel>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210763&amp;Mode=1">
+    <title>「消費者保護ルール実施状況のモニタリング2026年度調査計画」(案)に対する意見募集の結果及び「消費者保護ルール実施状況のモニタリング2026年度調査計画」の公表</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210763&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/08/25&lt;br/&gt;受付締切日時：2026/09/25 00:00&lt;br/&gt;命令等の公布日：&lt;br/&gt;提出意見数：22&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電気通信事業部料金サービス課消費者契約適正化推進室
+電話：03-5253-5488&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260054&amp;Mode=1">
+    <title>化学物質の審査及び製造等の規制に関する法律施行令附則第四項の表ＰＦＯＳ又はその塩の項等に規定する消火器、消火器用消火薬剤及び泡消火薬剤に関する技術上の基準を定める省令の一部を改正する省令案に関する意見公募（パブリックコメント）について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260054&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/01&lt;br/&gt;受付締切日時：2026/10/01 00:00&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：8&lt;br/&gt;カテゴリー：環境保全&lt;br/&gt;問合せ先（所管省庁・部局名等）：環境省大臣官房環境保健部 化学物質安全課 化学物質審査室
+電話：03-5521-8253（直通）&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260055&amp;Mode=1">
+    <title>化学物質の審査及び製造等の規制に関する法律施行令附則第四項の表ＰＦＯＳ又はその塩の項等に規定する製品でＰＦＯＳ又はその塩等が使用されているものの容器、包装又は送り状に当該第一種特定化学物質による環境の汚染を防止するための措置等に関し表示すべき事項の一部を改正する件（案）に関する意見公募（パブリックコメント）について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=195260055&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/01&lt;br/&gt;受付締切日時：2026/10/01 00:00&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：7&lt;br/&gt;カテゴリー：環境保全&lt;br/&gt;問合せ先（所管省庁・部局名等）：環境省大臣官房環境保健部 化学物質安全課 化学物質審査室
+電話：03-5521-8253（直通）&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260720&amp;Mode=1">
+    <title>建築基準法施行規則及び建築基準法に基づく指定建築基準適合判定資格者検定機関等に関する省令の一部を改正する省令案に関する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260720&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/08&lt;br/&gt;受付締切日時：2026/10/08 00:00&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：268&lt;br/&gt;カテゴリー：建築、住宅&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省住宅局建築指導課&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320023&amp;Mode=1">
+    <title>「事業適応の実施に関する指針の一部を改正する告示（案）」に対する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320023&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/08&lt;br/&gt;受付締切日時：2026/10/16 23:59&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：5&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局産業創造課&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320024&amp;Mode=1">
+    <title>「産業競争力強化法施行規則の一部を改正する命令（案）」に対する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320024&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/08&lt;br/&gt;受付締切日時：2026/10/16 23:59&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：11&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局産業創造課、生活維持物品役務需要減等対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320025&amp;Mode=1">
+    <title>産業競争力強化法第百四十条の二十八第一項に規定する生活維持物品役務需要減等事業適応支援業務を行う者の認定等に関する省令（案）に対する意見募集に関する意見公募手続の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320025&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/08&lt;br/&gt;受付締切日時：2026/10/07 23:59&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：11&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局生活維持物品役務需要減等対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320026&amp;Mode=1">
+    <title>生活維持物品役務需要減等事業適応の実施に関する指針（案）に関する意見公募手続の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320026&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/09&lt;br/&gt;受付締切日時：2026/10/08 23:59&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：22&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局生活維持物品役務需要減等対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=120260026&amp;Mode=1">
+    <title>「道路交通法施行規則の一部を改正する内閣府令案」に対する意見の募集結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=120260026&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/09/18&lt;br/&gt;受付締切日時：2026/10/18 00:00&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：34&lt;br/&gt;カテゴリー：警察&lt;br/&gt;問合せ先（所管省庁・部局名等）：警察庁交通局運転免許課
+電話：03-3581-0141（内線5375）&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260410&amp;Mode=1">
+    <title>都市再生特別措置法等の一部を改正する法律の施行に伴う関係政令の整備に関する政令案に関する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260410&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/10/06&lt;br/&gt;受付締切日時：2026/11/05 21:00&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：17&lt;br/&gt;カテゴリー：都市計画&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省都市局都市計画課&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=620340014&amp;Mode=1">
+    <title>「電気事業法の一部を改正する法律の施行に伴う関係政令の整備に関する政令（案）」等に対する意見公募手続の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=620340014&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：2026/10/09&lt;br/&gt;受付締切日時：2026/11/07 23:59&lt;br/&gt;命令等の公布日：2026/11/27&lt;br/&gt;提出意見数：0&lt;br/&gt;カテゴリー：工業&lt;br/&gt;問合せ先（所管省庁・部局名等）：資源エネルギー庁　電力・ガス事業部政策課&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=185001516&amp;Mode=1">
+    <title>専修学校の専門課程又は専攻科のうち、当該課程を修了した者が大学（短期大学を除く。）の専攻科又は大学院への入学に関し大学を卒業した者と同等以上の学力があると認められるものに係る基準の改正について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=185001516&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/20&lt;br/&gt;案の公示日：&lt;br/&gt;受付締切日時：&lt;br/&gt;命令等の公布日：2026/11/20&lt;br/&gt;提出意見数：0&lt;br/&gt;カテゴリー：教育&lt;br/&gt;問合せ先（所管省庁・部局名等）：文部科学省総合教育政策局生涯学習推進課
+電話：03-5253-4111（内線2939）&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550003576&amp;Mode=1">
+    <title>「駆虫薬有効性評価ガイドラインの一部改正案についての意見・情報の募集」の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550003576&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2022/10/25&lt;br/&gt;受付締切日時：2022/11/23 23:59&lt;br/&gt;命令等の公布日：2026/11/19&lt;br/&gt;提出意見数：2&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省消費・安全局畜水産安全管理課 
+電話：03-3502-8111（内線4538）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004011&amp;Mode=1">
+    <title>「遺伝毒性試験ガイドラインの一部改正案についての意見・情報の募集」の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004011&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2024/11/08&lt;br/&gt;受付締切日時：2024/12/07 23:59&lt;br/&gt;命令等の公布日：2026/11/19&lt;br/&gt;提出意見数：3&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省消費・安全局畜水産安全管理課 
+電話：03-3502-8111（内線4538）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004012&amp;Mode=1">
+    <title>「生殖毒性試験ガイドラインの一部改正案についての意見・情報の募集」の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004012&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2024/11/08&lt;br/&gt;受付締切日時：2024/12/07 23:59&lt;br/&gt;命令等の公布日：2026/11/19&lt;br/&gt;提出意見数：1&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省消費・安全局畜水産安全管理課 
+電話：03-3502-8111（内線4538）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320027&amp;Mode=1">
+    <title>産業競争力強化法第百四十条の二第三項ただし書の経済産業省令・農林水産省令・国土交通省令
+で定める軽微な変更を定める省令（案）等に関する意見公募手続の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320027&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2026/09/09&lt;br/&gt;受付締切日時：2026/10/16 12:00&lt;br/&gt;命令等の公布日：2026/11/19&lt;br/&gt;提出意見数：9&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局生活維持物品役務需要減等対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210774&amp;Mode=1">
+    <title>電波有効利用の推進に係る検討課題に対する意見募集の結果</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210774&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2026/09/19&lt;br/&gt;受付締切日時：2026/10/19 23:59&lt;br/&gt;命令等の公布日：&lt;br/&gt;提出意見数：93&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電波部電波政策課
+TEL:03-5253-5909&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260192&amp;Mode=1">
+    <title>難病の患者に対する医療等に関する法律施行規則第十五条第一項第一号イに規定する厚生労働大臣が定める認定機関が認定する専門医の資格及び児童福祉法施行規則第七条の十第一項第一号に規定する厚生労働大臣が定める認定機関が認定する専門医の資格の一部を改正する告示案に関する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260192&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2026/09/19&lt;br/&gt;受付締切日時：2026/10/19 00:00&lt;br/&gt;命令等の公布日：2026/11/19&lt;br/&gt;提出意見数：5&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：厚生労働省健康・生活衛生局難病対策課&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260723&amp;Mode=1">
+    <title>建築基準法施行令の一部を改正する政令の施行に伴う関係告示等の制定及び改正案に関する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=155260723&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2026/09/26&lt;br/&gt;受付締切日時：2026/10/26 17:00&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：43&lt;br/&gt;カテゴリー：建築、住宅&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省住宅局建築指導課・参事官（建築企画担当）付&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210781&amp;Mode=1">
+    <title>電話に関するユニバーサルサービス制度に基づく交付金の額及び交付方法の認可並びに負担金の額及び徴収方法の認可に対する意見募集の結果</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210781&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/19&lt;br/&gt;案の公示日：2026/10/01&lt;br/&gt;受付締切日時：2026/10/31 00:00&lt;br/&gt;命令等の公布日：&lt;br/&gt;提出意見数：0&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電気通信事業部基盤整備促進課 
+Tel：03-5253-5817&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260176&amp;Mode=1">
+    <title>「生物学的製剤基準の一部を改正する件（案）」に関する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260176&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：2026/09/02&lt;br/&gt;受付締切日時：2026/10/03 00:00&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：3&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：厚生労働省医薬局医薬品審査管理課&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004403&amp;Mode=1">
+    <title>「「「飼料添加物の動物試験の実施に関する基準について」、「飼料添加物の動物試験の実施に関する基準に基づく査察実施要領の制定について」及び「飼料添加物の評価基準の制定について」の一部改正案」についての意見・情報の募集」の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=550004403&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：2026/09/09&lt;br/&gt;受付締切日時：2026/10/08 23:59&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：2&lt;br/&gt;カテゴリー：農業&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省消費・安全局畜水産安全管理課 
+電話：03-3502-8111（内線4546）&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210772&amp;Mode=1">
+    <title>固定資産評価基準の一部を改正する告示案に係る意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210772&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：2026/09/16&lt;br/&gt;受付締切日時：2026/10/21 00:00&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：11&lt;br/&gt;カテゴリー：地方財政、地方税&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省自治税務局資産評価室
+土地係　TEL:03-5253-5679
+家屋係　TEL:03-5253-5680&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320030&amp;Mode=1">
+    <title>「産業競争力強化法施行令及び登録免許税法施行令の一部を改正する政令（案）」に対する意見募集の結果について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=595320030&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：2026/09/11&lt;br/&gt;受付締切日時：2026/10/10 21:30&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：9&lt;br/&gt;カテゴリー：経済財政政策&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省経済産業政策局産業創造課 
+生活維持物品役務需要減等対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210773&amp;Mode=1">
+    <title>「電気通信事業分野における競争状況等の調査及び評価の実施に関する方針」の改定案に対する意見募集の結果</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210773&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：2026/10/01&lt;br/&gt;受付締切日時：2026/10/31 00:00&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：16&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電気通信事業部事業政策課
+Tel：03-5253-5978&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260257&amp;Mode=1">
+    <title>医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律第四十三条第一項の規定に基づき検査を要するものとして厚生労働大臣の指定する医薬品等の一部を改正する件の制定に際し、意見公募手続を実施しなかった理由について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=495260257&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：&lt;br/&gt;受付締切日時：&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：0&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：医薬局監視指導・麻薬対策課&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210796&amp;Mode=1">
+    <title>「地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律施行令」の制定について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCM1040&amp;id=145210796&amp;Mode=1</link>
+    <description>結果の公示日：2026/11/18&lt;br/&gt;案の公示日：&lt;br/&gt;受付締切日時：&lt;br/&gt;命令等の公布日：2026/11/18&lt;br/&gt;提出意見数：0&lt;br/&gt;カテゴリー：選挙、政党&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省自治行政局選挙部選挙課
+電話：03-5253-5568&lt;br/&gt;</description>
+    <dc:date>2026-11-17T15:00:Z</dc:date>
+  </item>
+</rdf:RDF>

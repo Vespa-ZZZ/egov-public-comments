@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <channel rdf:about="https://public-comment.e-gov.go.jp/rss/pcm_list.xml">
+    <title>パブリックコメント・意見募集案件一覧</title>
+    <description>パブリックコメントでの意見募集案件一覧です。</description>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTLIST&amp;Mode=0</link>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210800&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202608&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=620340104&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210797&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=195260084&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=595320123&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260941&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260271&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260937&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202607&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210802&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004447&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004448&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260936&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=141000248&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260270&amp;Mode=0"/>
+        <rdf:li rdf:resource="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260269&amp;Mode=0"/>
+      </rdf:Seq>
+    </items>
+    <dc:date>2026-11-21T09:01:17+0900</dc:date>
+  </channel>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210800&amp;Mode=0">
+    <title>無線局（基幹放送局を除く。）の開設の根本的基準等の一部を改正する省令案等に係る意見募集
+－ 自律型海上無線機器（AMRD）の導入等のための制度整備 －</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210800&amp;Mode=0</link>
+    <description>案の公示日：2026/11/21&lt;br/&gt;受付締切日時：2026/12/21 23:59&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：【周波数割当計画の変更案以外について】
+総務省総合通信基盤局電波部基幹・衛星移動通信課
+(TEL: 03-5253-5901)
+【周波数割当計画の変更案について】
+総務省総合通信基盤局電波部電波政策課&lt;br/&gt;</description>
+    <dc:date>2026-11-20T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202608&amp;Mode=0">
+    <title>危険物の規制に関する政令及び消防法施行令の一部を改正する政令（案）に対する意見公募について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202608&amp;Mode=0</link>
+    <description>案の公示日：2026/11/21&lt;br/&gt;受付締切日時：2026/12/21 23:59&lt;br/&gt;カテゴリー：消防&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省消防庁予防課・危険物保安室
+(03-5253-7523,03-5253-7524)&lt;br/&gt;</description>
+    <dc:date>2026-11-20T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=620340104&amp;Mode=0">
+    <title>特定放射性廃棄物の最終処分に関する法律第十一条第三項の単位数量当たりの第一種最終処分業務に必要な金額及び同法第十一条の二第三項の単位数量当たりの第二種最終処分業務に必要な金額を定める省令の一部を改正する省令（案）に対する意見募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=620340104&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/21 00:00&lt;br/&gt;カテゴリー：その他&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省　資源エネルギー庁　電力・ガス事業部　放射性廃棄物対策課
+電話：０３－３５０１－１９９２&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210797&amp;Mode=0">
+    <title>携帯音声通信事業者による契約者等の本人確認等及び携帯音声通信役務の不正な利用の防止に関する法律の一部を改正する法律の施行に伴う関係政令の整備に関する政令案に対する意見募集</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210797&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/21 23:59&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電気通信事業部
+利用環境課
+TEL:03-5253-5487（直通）
+
+警察庁刑事局捜査支援分析管理官
+パブリックコメント担当
+TEL:03-3581-0141（内線：4346）&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=195260084&amp;Mode=0">
+    <title>「水質汚濁防止法施行規則等の一部を改正する省令の一部を改正する省令案」に関する意見募集（パブリック・コメント）について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=195260084&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/20 00:00&lt;br/&gt;カテゴリー：環境保全&lt;br/&gt;問合せ先（所管省庁・部局名等）：環境省水・大気環境局環境管理課環境汚染対策室&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=595320123&amp;Mode=0">
+    <title>特定デジタルプラットフォームの透明性及び公正性の向上に関する法律に基づく特定デジタルプラットフォームに対する経済産業大臣による評価（案）に対する意見公募について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=595320123&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/20 13:00&lt;br/&gt;カテゴリー：IT社会化推進&lt;br/&gt;問合せ先（所管省庁・部局名等）：経済産業省商務情報政策局情報経済課デジタル取引環境整備室&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260941&amp;Mode=0">
+    <title>「宅配便の多様な受取方法の普及に向けたガイドライン（案）」に関する意見募集</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260941&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/11 23:59&lt;br/&gt;カテゴリー：貨物運送&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省物流・自動車局物流政策課　パブリックコメント担当　電話番号：03-5253-8799&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260271&amp;Mode=0">
+    <title>労働安全衛生法及び作業環境測定法の一部を改正する法律の一部の施行に伴う関係省令の整備等に関する省令の一部を改正する省令案に関する御意見の募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260271&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/19 15:00&lt;br/&gt;カテゴリー：労働&lt;br/&gt;問合せ先（所管省庁・部局名等）：厚生労働省労働基準局安全衛生部計画課法規係
+電話：03-5253-1111&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260937&amp;Mode=0">
+    <title>標準宅配便運送約款の一部を改正する告示案に関する意見募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260937&amp;Mode=0</link>
+    <description>案の公示日：2026/11/20&lt;br/&gt;受付締切日時：2026/12/11 23:59&lt;br/&gt;カテゴリー：貨物運送&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省物流・自動車局貨物流通事業課　意見募集担当&lt;br/&gt;</description>
+    <dc:date>2026-11-19T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202607&amp;Mode=0">
+    <title>非常勤消防団員等に係る損害補償の基準を定める政令の一部を改正する政令案に対する意見募集</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=860202607&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 23:59&lt;br/&gt;カテゴリー：消防&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省消防庁国民保護・防災部防災課地域防災室
+03-5253-7561（直通）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210802&amp;Mode=0">
+    <title>電気通信事業法施行規則等の一部改正に対する意見募集</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=145210802&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 23:59&lt;br/&gt;カテゴリー：電気通信&lt;br/&gt;問合せ先（所管省庁・部局名等）：総務省総合通信基盤局電気通信事業部料金サービス課
+電話：０３ー５２５３－５８４５&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004447&amp;Mode=0">
+    <title>組換えDNA技術応用飼料の安全性確認申請案件についての意見・情報の募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004447&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 23:59&lt;br/&gt;カテゴリー：農業&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省消費・安全局畜水産安全管理課 
+電話：03-3502-8111（内線4546）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004448&amp;Mode=0">
+    <title>米穀の出荷販売事業者が遵守すべき事項を定める省令の一部を改正する省令案についての意見・情報の募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=550004448&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 23:59&lt;br/&gt;カテゴリー：農業&lt;br/&gt;問合せ先（所管省庁・部局名等）：農林水産省農産局農産政策部企画課 
+電話：03-3502-8111（内線4971）&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260936&amp;Mode=0">
+    <title>道路運送車両の保安基準等の一部を改正する省令案、道路運送車両の保安基準の細目を定める告示等の一部を改正する告示案及び走行環境条件の付与の実施要領について（依命通達）の一部を改正する案について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=155260936&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/19 10:00&lt;br/&gt;カテゴリー：陸運&lt;br/&gt;問合せ先（所管省庁・部局名等）：国土交通省物流・自動車局車両基準・国際課&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=141000248&amp;Mode=0">
+    <title>母子保健法施行規則の一部を改正する内閣府令（案）に関する御意見の募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=141000248&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 17:00&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：こども家庭庁成育局母子保健課&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260270&amp;Mode=0">
+    <title>医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律第二十三条の二の二十三第一項の規定により厚生労働大臣が基準を定めて指定する医療機器の一部を改正する件（案）に係る御意見の募集について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260270&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/19 23:59&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：厚生労働省医薬局医療機器審査管理課
+電話：03-5253-1111
+内線番号：4215&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+  <item rdf:about="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260269&amp;Mode=0">
+    <title>地域における医療及び介護の総合的な確保の促進に関する法律施行規則の一部を改正する省令案について</title>
+    <link>https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=495260269&amp;Mode=0</link>
+    <description>案の公示日：2026/11/19&lt;br/&gt;受付締切日時：2026/12/18 23:59&lt;br/&gt;カテゴリー：厚生&lt;br/&gt;問合せ先（所管省庁・部局名等）：厚生労働省政策統括官付医療情報連携担当参事官室&lt;br/&gt;</description>
+    <dc:date>2026-11-18T15:00:Z</dc:date>
+  </item>
+</rdf:RDF>
