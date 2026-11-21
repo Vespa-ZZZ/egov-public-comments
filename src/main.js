@@ -134,6 +134,7 @@ try {
     let pushed = 0;
     let failed = 0;
     let detailRequests = 0;
+    let chargeLimitReached = false;
     for (const item of candidates) {
         if (pushed >= maxItems) break;
         const { key, failCount, retrievedAt, ...record } = item;
@@ -167,21 +168,25 @@ try {
             }
         }
         // eventId is stable, so downstream consumers can de-duplicate if a run stops between output and state save.
-        await Actor.pushData({ eventId: key, ...record, retrievedAt: retrievedAt ?? runStartedAt, source: SOURCE });
+        const result = await Actor.pushData({ eventId: key, ...record, retrievedAt: retrievedAt ?? runStartedAt, source: SOURCE });
+        chargeLimitReached = result?.eventChargeLimitReached === true;
+        if (chargeLimitReached) log.warning('Pay-per-event charge limit reached. Stopping dataset output.');
+        if (chargeLimitReached && result.chargedCount === 0) break;
         pushed++;
         pending.delete(key);
         if (onlyNew) {
             seen.add(key);
             await saveState();
         }
+        if (chargeLimitReached) break;
     }
     const unhandled = [...pending.values()].filter((it) => !seen.has(it.key));
 
     if (pushed === 0 && onlyNew) log.info(`No new items output (${unhandled.length} pending for the next run).`);
-    else if (pushed === 0) log.warning('No items matched. Try other feeds, categories or wider filters.');
+    else if (pushed === 0 && !chargeLimitReached) log.warning('No items matched. Try other feeds, categories or wider filters.');
     log.info(`Done. Pushed ${pushed} items${failed ? `, ${failed} detail page(s) failed` : ''}.`);
     await Actor.setValue('RUN_SUMMARY', { processed: candidates.length, pushed, failedDetails: failed, detailRequests, unhandled: unhandled.length });
-    if (failed > 0 && failed === detailRequests) {
+    if (!chargeLimitReached && failed > 0 && failed === detailRequests) {
         throw new Error(`All ${failed} detail page request(s) failed; e-Gov may be temporarily unavailable.`);
     }
     await Actor.exit();

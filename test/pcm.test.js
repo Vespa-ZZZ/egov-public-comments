@@ -1,11 +1,54 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { Actor, log } from 'apify';
 import {
     feedUrl, parseRss, parseDetail, slashDateToIso, kanjiDateToIso, extractMinistry, itemMatches, CATEGORIES,
 } from '../src/pcm.js';
 
 const fx = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
+
+test('a skipped dataset write stays pending and is retried when the RSS items disappear', async (t) => {
+    const values = new Map();
+    const saved = [];
+    let limited = true;
+    let attempts = 0;
+    const warning = t.mock.method(log, 'warning', () => {});
+    t.mock.method(log, 'info', () => {});
+    t.mock.method(log, 'error', () => {});
+    t.mock.method(Actor, 'init', async () => {});
+    t.mock.method(Actor, 'exit', async () => {});
+    t.mock.method(Actor, 'fail', async (message) => assert.fail(message));
+    t.mock.method(Actor, 'getInput', async () => ({ onlyNew: true, fetchDetails: false }));
+    t.mock.method(Actor, 'openKeyValueStore', async () => ({
+        getValue: async (key) => structuredClone(values.get(key)),
+        setValue: async (key, value) => values.set(key, structuredClone(value)),
+    }));
+    t.mock.method(Actor, 'setValue', async (key, value) => values.set(key, value));
+    t.mock.method(Actor, 'pushData', async (record) => {
+        attempts++;
+        const skipped = limited && attempts === 2;
+        if (!skipped) saved.push(record.eventId);
+        return { eventChargeLimitReached: skipped, chargedCount: 0 };
+    });
+    t.mock.method(globalThis, 'fetch', async () => new Response(limited
+        ? fx('pcm_list.xml')
+        : '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><channel><title>Empty feed</title></channel></rdf:RDF>'));
+
+    await import('../src/main.js?charge-limit');
+    assert.equal(attempts, 2);
+    assert.equal(values.get('RUN_SUMMARY').pushed, 1);
+    assert.deepEqual(values.get('seen-default'), saved);
+    const pending = values.get('pending-default').map((item) => item.key);
+    assert.ok(pending.length > 1);
+    assert.match(warning.mock.calls[0].arguments[0], /charge limit reached/i);
+
+    limited = false;
+    await import('../src/main.js?after-charge-limit');
+    assert.equal(values.get('RUN_SUMMARY').pushed, pending.length);
+    assert.deepEqual(saved.slice(1), pending);
+    assert.deepEqual(values.get('pending-default'), []);
+});
 
 test('feedUrl builds all-items and category feed URLs', () => {
     assert.equal(feedUrl('open'), 'https://public-comment.e-gov.go.jp/rss/pcm_list.xml');

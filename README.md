@@ -83,6 +83,7 @@ Note: `ministries` and `keywords` are combined with AND (an item must match both
 
 - The Actor reads e-Gov's official RSS feeds (all items, or one feed per selected category) and optionally opens each case page. Requests are sequential with a delay (default 2 s).
 - The RSS feeds only contain **recent items** (the all-items feed holds a few dozen). Selecting categories reaches further back for those categories. For complete coverage, run it on a schedule with `onlyNew: true` — items whose detail page could not be loaded are kept as pending and retried on the next run.
+- When the pay-per-event spending limit is reached, the run stops with a warning and monitoring keeps unsaved items pending for the next run.
 - **Privacy:** contact sections (問合せ先) and the free-form remarks (備考) may include staff names and phone numbers, so they are never output. The ministry is matched against a list of known government organisations (null if none is recognised), phone numbers and e-mail addresses are removed from remaining free text, and only http(s) document links are listed.
 - The feeds only reach back a limited time; items that dropped out of the RSS before your first run cannot be fetched. In monitoring mode, do not run two schedules with the same `stateKey` at the same time. `maxDetailRequests` limits detail page downloads per run.
 - Without monitoring mode, if every detail page fails the run still outputs the RSS rows (with `detailError`) but ends as failed so you notice the outage.
