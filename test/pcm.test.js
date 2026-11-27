@@ -13,6 +13,7 @@ test('a skipped dataset write stays pending and is retried when the RSS items di
     const saved = [];
     let limited = true;
     let attempts = 0;
+    t.mock.method(Actor, 'getChargingManager', () => undefined);
     const warning = t.mock.method(log, 'warning', () => {});
     t.mock.method(log, 'info', () => {});
     t.mock.method(log, 'error', () => {});
@@ -195,4 +196,42 @@ test('round-2 privacy: titles, international numbers and non-document links', as
 
 test('parseDetail requires a case number', () => {
     assert.throws(() => parseDetail('<table class="egovui-normal-horizontal"><tr><th>カテゴリー</th><td>x</td></tr></table>'), /no case number/);
+});
+
+test('prechecks the dataset item budget and allows non-PPE output', async (t) => {
+    for (const [isPayPerEvent, budget] of [[true, 1], [true, 0], [false, 0]]) {
+        const configureActor = (actor, records) => {
+            actor.getChargingManager = () => ({
+                getPricingInfo: () => ({ isPayPerEvent }),
+                calculateMaxEventChargeCountWithinLimit(event) {
+                    assert.equal(event, 'apify-default-dataset-item');
+                    return budget - records.length;
+                },
+            });
+        };
+        const values = new Map();
+        const rows = [];
+        const actor = {};
+        configureActor(actor, rows);
+        t.mock.method(Actor, 'getChargingManager', actor.getChargingManager);
+        t.mock.method(Actor, 'init', async () => {});
+        t.mock.method(Actor, 'exit', async () => {});
+        t.mock.method(Actor, 'fail', async (message) => assert.fail(message));
+        t.mock.method(Actor, 'getInput', async () => ({ onlyNew: true, fetchDetails: false, maxItems: 3 }));
+        t.mock.method(Actor, 'openKeyValueStore', async () => ({
+            getValue: async (key) => structuredClone(values.get(key)),
+            setValue: async (key, value) => values.set(key, structuredClone(value)),
+        }));
+        t.mock.method(Actor, 'setValue', async (key, value) => values.set(key, value));
+        t.mock.method(Actor, 'pushData', async (row) => rows.push(row.eventId));
+        t.mock.method(log, 'info', () => {});
+        t.mock.method(log, 'warning', () => {});
+        t.mock.method(globalThis, 'fetch', async () => new Response(fx('pcm_list.xml')));
+        await import(`../src/main.js?budget=${isPayPerEvent}-${budget}`);
+        const summary = values.get('RUN_SUMMARY');
+        assert.equal(rows.length, isPayPerEvent ? budget : 3);
+        assert.equal(summary.pushed, rows.length);
+        assert.equal(summary.stopReason, isPayPerEvent ? 'spendingLimit' : undefined);
+        assert.deepEqual(values.get('seen-default'), rows);
+    }
 });

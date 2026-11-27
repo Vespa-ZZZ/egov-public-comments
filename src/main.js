@@ -1,4 +1,5 @@
 import { Actor, log } from 'apify';
+import { pushDataWithinLimit } from './charging.js';
 import {
     CATEGORIES, SOURCE, feedUrl, parseRss, parseDetail, itemMatches, sanitize, redactContacts,
 } from './pcm.js';
@@ -168,7 +169,7 @@ try {
             }
         }
         // eventId is stable, so downstream consumers can de-duplicate if a run stops between output and state save.
-        const result = await Actor.pushData({ eventId: key, ...record, retrievedAt: retrievedAt ?? runStartedAt, source: SOURCE });
+        const result = await pushDataWithinLimit(Actor, { eventId: key, ...record, retrievedAt: retrievedAt ?? runStartedAt, source: SOURCE });
         chargeLimitReached = result?.eventChargeLimitReached === true;
         if (chargeLimitReached) log.warning('Pay-per-event charge limit reached. Stopping dataset output.');
         if (chargeLimitReached && result.chargedCount === 0) break;
@@ -185,7 +186,10 @@ try {
     if (pushed === 0 && onlyNew) log.info(`No new items output (${unhandled.length} pending for the next run).`);
     else if (pushed === 0 && !chargeLimitReached) log.warning('No items matched. Try other feeds, categories or wider filters.');
     log.info(`Done. Pushed ${pushed} items${failed ? `, ${failed} detail page(s) failed` : ''}.`);
-    await Actor.setValue('RUN_SUMMARY', { processed: candidates.length, pushed, failedDetails: failed, detailRequests, unhandled: unhandled.length });
+    await Actor.setValue('RUN_SUMMARY', {
+        processed: candidates.length, pushed, failedDetails: failed, detailRequests, unhandled: unhandled.length,
+        ...(chargeLimitReached && { stopReason: 'spendingLimit' }),
+    });
     if (!chargeLimitReached && failed > 0 && failed === detailRequests) {
         throw new Error(`All ${failed} detail page request(s) failed; e-Gov may be temporarily unavailable.`);
     }
