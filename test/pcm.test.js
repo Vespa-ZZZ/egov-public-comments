@@ -7,6 +7,12 @@ import {
 } from '../src/pcm.js';
 
 const fx = (name) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
+const pdfAttachment = (section, title, seqNo) => ({
+    section,
+    title,
+    url: `https://public-comment.e-gov.go.jp/pcm/download?seqNo=${seqNo}`,
+    fileType: 'PDF',
+});
 
 test('a skipped dataset write stays pending and is retried when the RSS items disappear', async (t) => {
     const values = new Map();
@@ -50,6 +56,60 @@ test('a skipped dataset write stays pending and is retried when the RSS items di
     assert.deepEqual(saved.slice(1), pending);
     assert.deepEqual(values.get('pending-default'), []);
 });
+
+const retryCases = [
+    { name: 'seconds', header: '15', wait: 15000 },
+    { name: 'exactly 120 seconds', header: '120', wait: 120000 },
+    { name: 'HTTP-date', header: 'Sat, 28 Nov 2026 00:00:20 GMT', wait: 20000 },
+    { name: 'RFC 850 date', header: 'Saturday, 28-Nov-26 00:00:20 GMT', wait: 20000 },
+    { name: 'asctime date', header: 'Sat Nov 28 00:00:20 2026', wait: 20000 },
+    { name: 'past HTTP-date', header: 'Fri, 27 Nov 2026 23:59:00 GMT', wait: 3000 },
+    { name: 'invalid date', header: '2026-11-29', wait: 3000 },
+    { name: 'invalid seconds', header: '-1', wait: 3000 },
+    { name: 'seconds over the limit', header: '121' },
+    { name: 'HTTP-date over the limit', header: 'Sat, 28 Nov 2026 00:02:01 GMT' },
+];
+
+for (const { name, header, wait } of retryCases) {
+    test(`fetch retry handles Retry-After with ${name}`, async (t) => {
+        t.mock.method(Date, 'now', () => Date.parse('2026-11-28T00:00:00Z'));
+        const timer = t.mock.method(globalThis, 'setTimeout', (resolve) => resolve());
+        const warning = t.mock.method(log, 'warning', () => {});
+        const error = t.mock.method(log, 'error', () => {});
+        t.mock.method(log, 'info', () => {});
+        t.mock.method(Actor, 'init', async () => {});
+        t.mock.method(Actor, 'getInput', async () => ({ fetchDetails: false }));
+        t.mock.method(Actor, 'getChargingManager', () => undefined);
+        t.mock.method(Actor, 'pushData', async () => {});
+        t.mock.method(Actor, 'setValue', async () => {});
+        const exit = t.mock.method(Actor, 'exit', async () => {});
+        const fail = t.mock.method(Actor, 'fail', async () => {});
+        let attempts = 0;
+        t.mock.method(globalThis, 'fetch', async () => {
+            attempts++;
+            if (attempts === 1) return new Response(null, { status: 429, headers: { 'Retry-After': header } });
+            return new Response(fx('pcm_list.xml'));
+        });
+
+        await import(`../src/main.js?retry-after=${encodeURIComponent(name)}`);
+        if (wait === undefined) {
+            assert.equal(attempts, 1);
+            assert.equal(timer.mock.callCount(), 0);
+            assert.equal(warning.mock.callCount(), 0);
+            assert.equal(exit.mock.callCount(), 0);
+            assert.equal(fail.mock.callCount(), 1);
+            assert.match(fail.mock.calls[0].arguments[0], /HTTP 429.*Retry-After exceeds 120 seconds/);
+            assert.equal(error.mock.calls[0].arguments[0], fail.mock.calls[0].arguments[0]);
+        } else {
+            assert.equal(attempts, 2);
+            assert.deepEqual(timer.mock.calls.map(({ arguments: [, delay] }) => delay), [wait]);
+            assert.equal(warning.mock.callCount(), 1);
+            assert.ok(warning.mock.calls[0].arguments[0].endsWith(`retrying in ${wait / 1000}s`));
+            assert.equal(exit.mock.callCount(), 1);
+            assert.equal(fail.mock.callCount(), 0);
+        }
+    });
+}
 
 test('feedUrl builds all-items and category feed URLs', () => {
     assert.equal(feedUrl('open'), 'https://public-comment.e-gov.go.jp/rss/pcm_list.xml');
@@ -114,11 +174,12 @@ test('parseDetail extracts fields and attachments from an open call page', () =>
     assert.equal(d.caseNumber, '145210800');
     assert.equal(d.procedureType, '行政手続法に基づく手続');
     assert.equal(d.receptionStart, '2026-11-21T00:00:00+09:00');
-    assert.ok(d.attachments.length >= 4);
-    const a = d.attachments.find((x) => x.title === '意見公募要領');
-    assert.ok(a);
-    assert.match(a.url, /^https:\/\/public-comment\.e-gov\.go\.jp\/pcm\/download\?seqNo=\d+$/);
-    assert.equal(a.fileType, 'PDF');
+    assert.deepEqual(d.attachments, [
+        pdfAttachment('意見募集要領（提出先を含む）', '意見公募要領', '0000324434'),
+        pdfAttachment('命令などの案', '定めようとする命令等及び根拠法令条項の一覧表', '0000324435'),
+        pdfAttachment('命令などの案', '命令等の案（新旧対照表）', '0000324436'),
+        pdfAttachment('関連資料、 その他', '報道資料', '0000324437'),
+    ]);
     assert.doesNotMatch(JSON.stringify(d), /TEL|電話/);
 });
 
@@ -127,7 +188,12 @@ test('parseDetail extracts result pages', () => {
     assert.equal(d.caseNumber, '145210763');
     assert.equal(d.procedureType, '任意の意見募集');
     assert.equal(d.revisedAfterComments, null);
-    assert.ok(d.attachments.some((x) => x.title?.includes('提出された意見')));
+    const section = '結果概要 提出意見 意見の考慮 結果・理由等';
+    assert.deepEqual(d.attachments, [
+        pdfAttachment(section, '提出された意見及び総務省の考え方', '0000324405'),
+        pdfAttachment(section, '「消費者保護ルール実施状況のモニタリング2026年度調査計画」', '0000324406'),
+        pdfAttachment('その他', '報道発表資料', '0000324407'),
+    ]);
     assert.doesNotMatch(JSON.stringify(d), /電話/);
 });
 
@@ -175,6 +241,41 @@ test('parseDetail skips contact rows, tel/mailto links and redacts free text', (
     assert.doesNotMatch(JSON.stringify(d), /03-1111-2222|tel:|mailto|staff/);
 });
 
+test('parseDetail keeps unique attachment links from document rows', () => {
+    const html = `<table class="egovui-normal-horizontal"><tbody>
+      <tr><th>案件番号</th><td>1</td></tr>
+      <tr><th>関連資料、その他</th><td>
+        <a href="/files/report.PDF?version=2#page=3">報告書</a>
+        <a href="https://www.e-gov.go.jp/files/draft.docx">案</a>
+        <a href="/files/data.xlsx">データ</a>
+        <a href="/pcm/download?seqNo=1234">添付</a>
+        <a href="https://public-comment.e-gov.go.jp/pcm/download?seqNo=1234">添付の再掲</a>
+        <a href="/pcm/detail?id=2">関連案件</a>
+        <a href="/pcm/download">資料番号なし</a>
+        <a href="/pcm/download?seqNo=invalid">無効な資料番号</a>
+        <a href="/contents/help/?file=report.pdf">ヘルプ</a>
+        <a href="https://e-gov.go.jp.example.org/file.pdf">外部ファイル</a>
+        <a href="https://www.mhlw.go.jp/a/b.pdf">省庁資料</a>
+        <a href="https://www.mhlw.go.jp/a/b">省庁の関連ページ</a>
+        <a href="https://example.org/pcm/download?seqNo=1234">外部のダウンロード</a>
+        <a href="javascript:void(0)">操作</a>
+        <a href="mailto:test@example.org">メール</a>
+        <a href=" #notes">ページ内リンク</a>
+      </td></tr>
+      <tr><th>命令などの案</th><td><a href="/files/report.PDF?version=2">報告書の再掲</a></td></tr>
+      <tr><th>資料の入手方法</th><td><a href="/files/location.pdf">窓口</a></td></tr>
+      <tr><th>カテゴリー</th><td><a href="/files/category.pdf">分類</a></td></tr>
+    </tbody></table>`;
+    assert.deepEqual(parseDetail(html).attachments.map(({ title, url }) => [title, url]), [
+        ['報告書', 'https://public-comment.e-gov.go.jp/files/report.PDF?version=2#page=3'],
+        ['案', 'https://www.e-gov.go.jp/files/draft.docx'],
+        ['データ', 'https://public-comment.e-gov.go.jp/files/data.xlsx'],
+        ['添付', 'https://public-comment.e-gov.go.jp/pcm/download?seqNo=1234'],
+        ['外部ファイル', 'https://e-gov.go.jp.example.org/file.pdf'],
+        ['省庁資料', 'https://www.mhlw.go.jp/a/b.pdf'],
+    ]);
+});
+
 test('round-2 privacy: titles, international numbers and non-document links', async () => {
     const { redactContacts: rc } = await import('../src/pcm.js');
     assert.equal(rc('+81-3-1234-5678'), '[redacted]');
@@ -188,10 +289,10 @@ test('round-2 privacy: titles, international numbers and non-document links', as
     assert.doesNotMatch(parseRss(rss, 'open')[0].title, /@/);
     const html = `<table class="egovui-normal-horizontal"><tbody>
       <tr><th>案件番号</th><td>1</td></tr>
-      <tr><th>関連資料、その他</th><td><a href="https://example.jp/staff-page">担当</a><a href="https://example.jp/doc.pdf">資料</a></td></tr>
-      <tr><th>資料の入手方法</th><td><a href="https://example.jp/a.pdf">窓口</a></td></tr>
+      <tr><th>関連資料、その他</th><td><a href="/contents/contact">担当</a><a href="/doc.pdf">資料</a></td></tr>
+      <tr><th>資料の入手方法</th><td><a href="/a.pdf">窓口</a></td></tr>
     </tbody></table>`;
-    assert.deepEqual(parseDetail(html).attachments.map((a) => a.url), ['https://example.jp/doc.pdf']);
+    assert.deepEqual(parseDetail(html).attachments.map((a) => a.url), ['https://public-comment.e-gov.go.jp/doc.pdf']);
 });
 
 test('parseDetail requires a case number', () => {

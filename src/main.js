@@ -8,29 +8,48 @@ const USER_AGENT = 'egov-public-comments-actor/1.0';
 const MAX_SEEN_IDS = 20000;
 const MAX_PENDING = 10000;
 const MAX_FAILURES = 5;
+const MAX_RETRY_WAIT_MS = 120_000;
+const HTTP_DATE_FORMATS = [
+    /^[A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} \d{4} \d{2}:\d{2}:\d{2} GMT$/,
+    /^[A-Z][a-z]+, \d{2}-[A-Z][a-z]{2}-\d{2} \d{2}:\d{2}:\d{2} GMT$/,
+    /^[A-Z][a-z]{2} [A-Z][a-z]{2} (?: \d|\d{2}) \d{2}:\d{2}:\d{2} \d{4}$/,
+];
 
 class InputError extends Error {}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const list = (v) => (Array.isArray(v) ? v : []).map((s) => String(s).trim()).filter(Boolean);
 
+function retryAfterMs(header) {
+    const value = header?.trim() ?? '';
+    if (/^\d+$/.test(value)) return Number(value) * 1000;
+    if (!HTTP_DATE_FORMATS.some((format) => format.test(value))) return 0;
+    // The obsolete asctime format omits the time zone, but HTTP dates are always UTC.
+    const deadline = Date.parse(value.endsWith('GMT') ? value : `${value} GMT`);
+    return Number.isFinite(deadline) ? Math.max(0, deadline - Date.now()) : 0;
+}
+
 async function fetchText(url, { retries = 3 } = {}) {
     let lastErr;
     for (let attempt = 0; attempt <= retries; attempt++) {
+        let retryAfter = 0;
         try {
             const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(30000) });
             if (res.ok) return await res.text();
             lastErr = new Error(`HTTP ${res.status} for ${url}`);
             if (res.status === 429) {
-                const ra = Number(res.headers.get('retry-after'));
-                if (Number.isFinite(ra) && ra > 0 && attempt < retries) await sleep(Math.min(ra, 120) * 1000);
+                retryAfter = retryAfterMs(res.headers.get('retry-after'));
             }
             if (res.status >= 400 && res.status < 500 && res.status !== 429) break;
         } catch (err) {
             lastErr = err;
         }
+        if (retryAfter > MAX_RETRY_WAIT_MS) {
+            lastErr = new Error(`${lastErr.message}. Retry-After exceeds ${MAX_RETRY_WAIT_MS / 1000} seconds.`);
+            break;
+        }
         if (attempt < retries) {
-            const wait = 3000 * 2 ** attempt;
+            const wait = Math.max(3000 * 2 ** attempt, retryAfter);
             log.warning(`Request failed (${lastErr.message}), retrying in ${wait / 1000}s`);
             await sleep(wait);
         }

@@ -157,15 +157,15 @@ const DETAIL_FIELDS = {
 const DATE_FIELDS = new Set(['receptionStart', 'decidedDate']);
 // Contact rows are deliberately skipped (may contain staff names and phone numbers).
 const SKIP_ROWS = /問合せ|問い合わせ|連絡先|担当/;
-// Rows whose links are documents. Links elsewhere (e.g. remarks) are not output.
+// Rows that can contain documents.
 const DOC_ROWS = /要領|案|資料|結果|意見|考え方|その他|概要|公募時/;
 // Rows that are free text even though their label matches DOC_ROWS.
 const NON_DOC_ROWS = /入手方法|備考|問合せ|問い合わせ|連絡/;
-// A link counts as a document when it is an e-Gov download/page link or points to a document file.
 const DOC_EXT = /\.(?:pdf|docx?|xlsx?|pptx?|csv|zip|txt|rtf|odt|ods)$/i;
 function isDocumentLink(u) {
-    if (u.hostname === 'public-comment.e-gov.go.jp') return true;
-    return DOC_EXT.test(u.pathname);
+    if (u.protocol !== 'https:' && u.protocol !== 'http:') return false;
+    return DOC_EXT.test(u.pathname) || (u.hostname === 'public-comment.e-gov.go.jp'
+        && u.pathname === '/pcm/download' && /^\d+$/.test(u.searchParams.get('seqNo') ?? ''));
 }
 
 /** Parse a detail page (open call or result). Returns extra fields + attachment list. */
@@ -174,26 +174,30 @@ export function parseDetail(html) {
     const rows = $('table.egovui-normal-horizontal tr');
     if (!rows.length) throw new Error('Unexpected detail page layout (no detail table found)');
     const out = { attachments: [] };
+    const attachmentUrls = new Set();
     rows.each((_, tr) => {
         const label = clean($(tr).find('th').first().text());
         if (!label || SKIP_ROWS.test(label)) return;
         const td = $(tr).find('td').first();
-        td.find('a[href]').each((__, a) => {
-            if (!DOC_ROWS.test(label) || NON_DOC_ROWS.test(label)) return;
-            const href = $(a).attr('href');
-            if (!href) return;
-            let abs;
-            try { abs = new URL(href, BASE); } catch { return; }
-            if (abs.protocol !== 'https:' && abs.protocol !== 'http:') return;
-            if (!isDocumentLink(abs)) return;
-            const badge = clean($(a).nextAll('.egovui-badge').first().text());
-            out.attachments.push({
-                section: label,
-                title: redactContacts(clean($(a).text())?.replace(/^・/, '') ?? null),
-                url: abs.href,
-                fileType: badge,
+        if (DOC_ROWS.test(label) && !NON_DOC_ROWS.test(label)) {
+            td.find('a[href]').each((__, a) => {
+                const href = $(a).attr('href').trim();
+                if (!href || href.startsWith('#')) return;
+                let abs;
+                try { abs = new URL(href, BASE); } catch { return; }
+                if (!isDocumentLink(abs)) return;
+                const urlWithoutFragment = abs.href.split('#', 1)[0];
+                if (attachmentUrls.has(urlWithoutFragment)) return;
+                attachmentUrls.add(urlWithoutFragment);
+                const badge = clean($(a).nextAll('.egovui-badge').first().text());
+                out.attachments.push({
+                    section: label,
+                    title: redactContacts(clean($(a).text())?.replace(/^・/, '') ?? null),
+                    url: abs.href,
+                    fileType: badge,
+                });
             });
-        });
+        }
         const key = DETAIL_FIELDS[label];
         if (key) {
             const raw = clean(td.text());
